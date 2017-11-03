@@ -2,8 +2,6 @@
 <resources>
     <integer-array name="google_colors">
         <item>@color/color_red</item>
-        <item>@color/color_green</item>
-        <item>@color/color_orange</item>
         <item>@color/color_red</item>
     </integer-array>
 </resources>
