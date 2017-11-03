@@ -1,0 +1,56 @@
+<resources>
+    <!-- 公共组件的高度 -->
+    <dimen name="common_actionbar_height">48dp</dimen>
+    <dimen name="common_list_height">44dp</dimen><!--单行列表的高度-->
+    <dimen name="common_padding_screen">15dp</dimen><!--中间内容距离屏幕边距-->
+    <dimen name="common_radius_size">4dp</dimen><!--圆角大小-->
+
+    <!--图片大小尺寸-->
+    <dimen name="small_image_48">24dp</dimen>
+    <dimen name="mid_image_160">80dp</dimen>
+    <dimen name="mid_image_200">100dp</dimen>
+    <dimen name="mid_image_110">55dp</dimen>
+    <dimen name="mid_image_140">70dp</dimen>
+
+    <!--list列表的高度-->
+    <dimen name="list_info_height">48dp</dimen>
+    <dimen name="list_info_height_big">86dp</dimen>
+    <dimen name="list_height_130">65dp</dimen>
+
+    <!-- 自定义字体大小 -->
+    <dimen name="px2sp_24px">12sp</dimen>
+    <dimen name="px2sp_28px">14sp</dimen>
+    <dimen name="px2sp_32px">16sp</dimen>
+    <dimen name="px2sp_36px">18sp</dimen>
+    <dimen name="px2sp_40px">20sp</dimen>
+
+    <!--字体大小-->
+    <dimen name="textsize_44px">22dp</dimen>
+    <dimen name="textsize_40px">20dp</dimen>
+    <dimen name="textsize_36px">18dp</dimen>
+    <dimen name="textsize_32px">16dp</dimen>
+    <dimen name="textsize_30px">15dp</dimen>
+    <dimen name="textsize_28px">14dp</dimen>
+    <dimen name="textsize_26px">13dp</dimen>
+    <dimen name="textsize_24px">12dp</dimen>
+    <dimen name="textsize_20px">10dp</dimen>
+
+    <!-- 一些距离大小 -->
+    <dimen name="view_distance_384">192dp</dimen>
+    <dimen name="view_distance_192">96dp</dimen>
+    <dimen name="view_distance_180">90dp</dimen>
+    <dimen name="view_distance_168">84dp</dimen>
+    <dimen name="view_distance_144">72dp</dimen>
+    <dimen name="view_distance_194">97dp</dimen>
+    <dimen name="view_distance_60">30dp</dimen>
+    <dimen name="view_distance_54">27dp</dimen>
+    <dimen name="view_distance_48">24dp</dimen>
+    <dimen name="view_distance_40">20dp</dimen>
+    <dimen name="view_distance_36">18dp</dimen>
+    <dimen name="view_distance_32">16dp</dimen>
+    <dimen name="view_distance_20">10dp</dimen>
+    <dimen name="view_distance_16">8dp</dimen>
+    <dimen name="view_distance_12">6dp</dimen>
+    <dimen name="view_distance_10">5dp</dimen>
+    <dimen name="view_distance_6">3dp</dimen>
+</resources>

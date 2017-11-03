@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sunny.beauty.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/frameMenu"
+        android:layout_alignParentTop="true"/>
+
+    <FrameLayout
+        android:id="@+id/frameMenu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_actionbar_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"
+            android:orientation="horizontal">
+
+            <!-- 记农事 -->
+            <FrameLayout
+                android:id="@+id/layout_write_fl"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:drawableTop="@drawable/ic_bottom_ask"
+                    android:gravity="center"
+                    android:text="书写"
+                    android:textColor="@drawable/main_bottom_tvcolor"
+                    android:textSize="12sp"/>
+            </FrameLayout>
+
+            <!-- 问答 -->
+            <FrameLayout
+                android:id="@+id/layout_done_fl"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:drawableTop="@drawable/ic_bottom_news"
+                    android:gravity="center"
+                    android:text="已完成"
+                    android:textColor="@drawable/main_bottom_tvcolor"
+                    android:textSize="12sp"/>
+            </FrameLayout>
+
+            <!-- 个人中心 -->
+            <FrameLayout
+                android:id="@+id/layout_center_fl"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:drawableTop="@drawable/ic_bottom_center"
+                    android:gravity="center"
+                    android:text="我"
+                    android:textColor="@drawable/main_bottom_tvcolor"
+                    android:textSize="12sp"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- <View style="@style/divide_line"/>-->
+    </FrameLayout>
+
+</RelativeLayout>

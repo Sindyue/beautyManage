@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">basemodel</string>
+
+    <!--add package-->
+    <string name="scan_code">扫描</string>
+    <string name="tint_package_name">名称(可选)</string>
+    <string name="tint_package_number">运单号</string>
+    <string name="wrong_number_and_check">无效的运单号，请检查后重试。</string>
+    <string name="require_permission">你需要授予相机权限才能使用扫描功能。</string>
+    <string name="package_name_default_pre">包裹</string>
+    <string name="package_exist">运单号已经在你的列表里了，请不要重复添加。</string>
+    <string name="permission_denied">权限被拒绝</string>
+    <string name="error">错误</string>
+    <string name="something_wrong">发生了一些错误…</string>
+    <string name="unable_to_open_camera">无法打开相机，请检查后重试。</string>
+    <!--add package end-->
+
+    <!--footer-->
+    <string name="list_footer_loading">正在加载更多的数据…</string>
+    <string name="list_footer_network_error">点击重新加载</string>
+    <string name="list_footer_end">已经全部加载完毕</string>
+    <string name="title_activity_clean_data">CleanDataActivity</string>
+</resources>
