@@ -17,6 +17,9 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import sunny.basemodel.BaseActivity;
 
+/**
+ * 主页面
+ */
 public class MainActivity extends BaseActivity {
 
     @InjectView(R.id.frame_content)
