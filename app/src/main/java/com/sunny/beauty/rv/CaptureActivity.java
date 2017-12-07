@@ -24,7 +24,7 @@ import sunny.basemodel.refresh.LoadingFooter;
 /**
  * author : wyy
  * time   : 2017/09/11
- * desc   :
+ * desc   : 加载了一个 receylerView 列表数据
  */
 
 public class CaptureActivity extends BaseActivity {

@@ -1,21 +1,20 @@
 package com.sunny.beauty;
 
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.sunny.beauty.personalcenter.CenterFragment;
-import com.sunny.beauty.rv.CaptureActivity;
+import com.sunny.beauty.personalcenter.FirstFragment;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import sunny.basemodel.BaseActivity;
+import sunny.basemodel.util.PV;
 
 /**
  * 主页面fdsh
@@ -34,7 +33,8 @@ public class MainActivity extends BaseActivity {
     FrameLayout frameMenu;
 
     private FragmentManager fragmentManager;
-    private CenterFragment fragmentOne, fragmentTwo, mCenterFragment;
+    private CenterFragment fragmentTwo, mCenterFragment;
+    private FirstFragment fragmentOne;
     private final int REQUEST_CODE_SCAN = 1;
 
     @Override
@@ -42,7 +42,18 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        initPVvalue();
         initData();
+    }
+
+    private void initPVvalue() {
+        //获取屏幕宽高
+        if (PV.DisplayWidth <= 0) {
+            DisplayMetrics metric = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(metric);
+            PV.DisplayWidth = metric.widthPixels; // 屏幕宽度（像素）
+            PV.DisplayHeight = metric.heightPixels;//屏幕高度(像素)
+        }
     }
 
     private void initData() {
@@ -85,7 +96,7 @@ public class MainActivity extends BaseActivity {
                 layoutWriteFl.setSelected(true);
                 if (fragmentOne == null) {
                     // 如果ContactsFragment为空，则创建一个并添加到界面上
-                    fragmentOne = new CenterFragment();
+                    fragmentOne = new FirstFragment();
                     fragmentOne.setText("fragmentOne");
                     transaction.add(R.id.frame_content, fragmentOne);
                 } else {
@@ -104,7 +115,6 @@ public class MainActivity extends BaseActivity {
                     // 如果NewsFragment不为空，则直接将它显示出来
                     transaction.show(fragmentTwo);
                 }
-                startScanningActivity();
                 break;
             case 3:
                 // 当点击了设置tab时，改变控件的图片和文字颜色
@@ -124,44 +134,6 @@ public class MainActivity extends BaseActivity {
         }
         transaction.commit();
     }
-
-    /**
-     * Launch the camera
-     */
-    private void startScanningActivity() {
-        try {
-            Intent intent = new Intent(this, CaptureActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivityForResult(intent, REQUEST_CODE_SCAN);
-        } catch (ActivityNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Handle the scanning result.
-     *
-     * @param requestCode The request code. See at
-     * @param resultCode  The result code.
-     * @param data        The result.
-     */
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case REQUEST_CODE_SCAN:
-                if (resultCode == RESULT_OK) {
-                    Bundle bundle = data.getExtras();
-                    if (null != bundle) {
-                        Toast.makeText(this, bundle.getString("result"), Toast.LENGTH_SHORT);
-                    }
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
 
     /**
      * 重置三个按钮的选中事件
