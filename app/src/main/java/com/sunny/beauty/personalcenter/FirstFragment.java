@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.sunny.beauty.R;
 import com.sunny.beauty.ViewPagerActivity;
 import com.sunny.beauty.rv.CaptureActivity;
+import com.sunny.beauty.view.CustomViewActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -35,6 +36,8 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
     TextView item1Tv;
     @InjectView(R.id.item2_tv)
     TextView item2Tv;
+    @InjectView(R.id.item3_tv)
+    TextView item3Tv;
 
     private String newStr = "CenterFragment";
 
@@ -50,6 +53,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
     private void initListener() {
         item1Tv.setOnClickListener(this);
         item2Tv.setOnClickListener(this);
+        item3Tv.setOnClickListener(this);
     }
 
     public void setText(String page) {
@@ -70,6 +74,9 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.item2_tv:
                 startViewPagerActivity();
+                break;
+            case R.id.item3_tv:
+                startDrawViewActivity();
                 break;
             default:
                 break;
@@ -122,6 +129,19 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
             Intent intent = new Intent(getActivity(), ViewPagerActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivityForResult(intent, REQUEST_CODE_SCAN);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 启动自定义View 页
+     */
+    private void startDrawViewActivity() {
+        try {
+            Intent intent = new Intent(getActivity(), CustomViewActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
         } catch (ActivityNotFoundException e) {
             e.printStackTrace();
         }

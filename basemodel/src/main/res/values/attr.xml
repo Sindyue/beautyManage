@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextViewStyle">
+        <attr name="viewTextColor" format="color"/>
+        <attr name="viewTextSize" format="dimension"/>
+        <attr name="viewText" format="string"/>
+        <attr name="viewPadding" format="dimension"/>
+    </declare-styleable>
+</resources>

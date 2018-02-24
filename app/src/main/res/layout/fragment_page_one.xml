@@ -38,4 +38,20 @@
         android:layout_height="1px"
         android:background="@color/common_divider_color"/>
 
+    <TextView
+        android:id="@+id/item3_tv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_white"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/common_padding_screen"
+        android:paddingRight="@dimen/common_padding_screen"
+        android:text="自定义View"
+        android:textColor="@color/color_red"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_divider_color"/>
+
 </LinearLayout>
