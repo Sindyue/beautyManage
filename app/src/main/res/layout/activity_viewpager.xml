@@ -24,4 +24,27 @@
             android:orientation="horizontal"
             android:paddingBottom="@dimen/view_distance_32"/>
     </RelativeLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <TextView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fba6a6"
+            android:padding="10dp"
+            android:text="返回"/>
+
+        <TextView
+            android:id="@+id/new_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_distance_192"
+            android:background="#fba6a6"
+            android:padding="10dp"
+            android:text="新增"/>
+
+    </android.support.v7.widget.Toolbar>
 </FrameLayout>

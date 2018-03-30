@@ -1,12 +1,17 @@
 package com.sunny.beauty.rv;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.sunny.beauty.R;
+import com.sunny.beauty.ViewPagerActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,12 +32,17 @@ import sunny.basemodel.refresh.LoadingFooter;
  * desc   : 加载了一个 receylerView 列表数据
  */
 
-public class CaptureActivity extends BaseActivity {
+public class CaptureActivity extends BaseActivity implements View.OnClickListener {
+    private static final String TAG = "wyyCaptureActivity";
 
     @InjectView(R.id.content_rv)
     RecyclerView contentRv;
     @InjectView(R.id.store_house_ptr_frame)
     PtrFrameLayout ptrLayout;
+    @InjectView(R.id.back_btn)
+    TextView backBtn;
+    @InjectView(R.id.new_btn)
+    TextView newBtn;
 
     private RVAdapter mAdapter;
     private List<Map<Object, String>> mDataList = new ArrayList<>();
@@ -42,6 +52,7 @@ public class CaptureActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         ButterKnife.inject(this);
+        initListener();
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         contentRv.setLayoutManager(mLayoutManager);
@@ -51,13 +62,66 @@ public class CaptureActivity extends BaseActivity {
         contentRv.setAdapter(mAdapter);
         /*初始化搜索动画相关部分*/
         refreshData();
+        Log.i(TAG, "onCreate: ");
     }
+
 
     @Override
     protected void onResume() {
+        Log.i(TAG, "onResume: ");
         super.onResume();
     }
 
+    @Override
+    protected void onStart() {
+        Log.i(TAG, "onStart: ");
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.i(TAG, "onRestart: ");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.i(TAG, "onPause: ");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(TAG, "onStop: ");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.i(TAG, "onDestroy: ");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        //此方法不会走到
+        Log.i(TAG, "onSaveInstanceState: ");
+        outState.putString("text", "dddd");
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        Log.i(TAG, "onSaveInstanceState: 11");
+        outState.putString("text", "fffffff");
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.i(TAG, "onRestoreInstanceState: savedInstanceState.getText = " + savedInstanceState.getString("text"));
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 
     private void refreshData() {
         getDataFromNet();
@@ -80,6 +144,27 @@ public class CaptureActivity extends BaseActivity {
         // ptrLayout.setFooterView(new MyPtrRefresher(MainActivity.this));
         ptrLayout.addPtrUIHandler(new MyPtrHandler(this, ptrLayout));
         initEvent();
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.back_btn:
+                finish();
+                break;
+            case R.id.new_btn:
+                Intent intent = new Intent(mContext, ViewPagerActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void initListener() {
+        backBtn.setOnClickListener(this);
+        newBtn.setOnClickListener(this);
     }
 
     /**
@@ -116,6 +201,4 @@ public class CaptureActivity extends BaseActivity {
             mDataList.add(map);
         }
     }
-
-
 }

@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+            android:launchMode="singleInstance"
             android:theme="@style/AppThemeWithActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,22 +22,25 @@
 
         <activity
             android:name=".personalcenter.CenterInfoActivity"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize"/>
 
         <!--扫描条码或二维码的界面-->
         <activity
             android:name=".rv.CaptureActivity"
-            android:windowSoftInputMode="adjustResize"/>
+            android:launchMode="singleTop"/>
 
         <!--ViewPager相关的界面-->
         <activity
             android:name=".ViewPagerActivity"
+            android:launchMode="singleInstance"
             android:theme="@style/AppThemeWithFullScreen"
             />
 
-        <!--ViewPager相关的界面-->
+        <!--自定义TextView相关的界面-->
         <activity
             android:name=".view.CustomViewActivity"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme"
             />
     </application>

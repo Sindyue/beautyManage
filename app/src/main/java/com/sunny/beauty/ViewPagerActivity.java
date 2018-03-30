@@ -1,5 +1,6 @@
 package com.sunny.beauty;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.sunny.beauty.rv.CaptureActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -21,12 +25,16 @@ import sunny.basemodel.util.PV;
  * desc   : 加载了一个 receylerView 列表数据
  */
 
-public class ViewPagerActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
+public class ViewPagerActivity extends BaseActivity implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
     @InjectView(R.id.content_vp)
     ViewPager contentVp;
     @InjectView(R.id.view_group_ll)
     LinearLayout viewGroupLl;
+    @InjectView(R.id.back_btn)
+    TextView backBtn;
+    @InjectView(R.id.new_btn)
+    TextView newBtn;
 
 
     /**
@@ -122,6 +130,8 @@ public class ViewPagerActivity extends BaseActivity implements ViewPager.OnPageC
 
     private void initListener() {
         contentVp.setOnPageChangeListener(this);
+        backBtn.setOnClickListener(this);
+        newBtn.setOnClickListener(this);
     }
 
     @Override
@@ -152,6 +162,23 @@ public class ViewPagerActivity extends BaseActivity implements ViewPager.OnPageC
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.back_btn:
+                intent = new Intent(mContext, CaptureActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.new_btn:
+                intent = new Intent(mContext, ViewPagerActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 
     private class PictureSlidePagerAdapter extends PagerAdapter {

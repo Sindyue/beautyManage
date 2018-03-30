@@ -1,9 +1,11 @@
 package com.sunny.beauty;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -20,6 +22,7 @@ import sunny.basemodel.util.PV;
  * 主页面fdsh
  */
 public class MainActivity extends BaseActivity {
+    private static final String TAG = "wyyMainActivity";
 
     @InjectView(R.id.frame_content)
     FrameLayout frameContent;
@@ -44,6 +47,48 @@ public class MainActivity extends BaseActivity {
         ButterKnife.inject(this);
         initPVvalue();
         initData();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.i(TAG, "onResume: ");
+        super.onResume();
+    }
+
+    @Override
+    protected void onStart() {
+        Log.i(TAG, "onStart: ");
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.i(TAG, "onRestart: ");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.i(TAG, "onPause: ");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(TAG, "onStop: ");
+        super.onStop();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.i(TAG, "onActivityResult: ");
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.i(TAG, "onDestroy: ");
+        super.onDestroy();
     }
 
     private void initPVvalue() {
