@@ -43,6 +43,12 @@
             android:launchMode="singleTask"
             android:theme="@style/AppTheme"
             />
+
+        <activity
+            android:name=".view.ConstraintLayoutActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme"
+            />
     </application>
 
 </manifest>

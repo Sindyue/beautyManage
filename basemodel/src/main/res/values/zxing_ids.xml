@@ -23,4 +23,6 @@
     <item name="restart_preview" type="id"/>
     <item name="return_scan_result" type="id"/>
 
+    <!--actionbar的标题栏id-->
+    <item name="actionbar_title" type="id"/>
 </resources>

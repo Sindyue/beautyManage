@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_bg_color"
-    android:orientation="vertical">
+    android:divider="@drawable/divider"
+    android:orientation="vertical"
+    android:showDividers="middle">
 
     <TextView
         android:id="@+id/item1_tv"
@@ -17,11 +19,6 @@
         android:text="RecylerView界面"
         android:textColor="@color/color_red"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/common_divider_color"/>
-
     <TextView
         android:id="@+id/item2_tv"
         android:layout_width="match_parent"
@@ -32,11 +29,6 @@
         android:paddingRight="@dimen/common_padding_screen"
         android:text="ViewPager界面"
         android:textColor="@color/color_red"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/common_divider_color"/>
 
     <TextView
         android:id="@+id/item3_tv"
@@ -49,9 +41,15 @@
         android:text="自定义View"
         android:textColor="@color/color_red"/>
 
-    <View
+    <TextView
+        android:id="@+id/item4_tv"
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/common_divider_color"/>
+        android:layout_height="60dp"
+        android:background="@color/color_white"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/common_padding_screen"
+        android:paddingRight="@dimen/common_padding_screen"
+        android:text="ConstraintLayout"
+        android:textColor="@color/color_red"/>
 
 </LinearLayout>

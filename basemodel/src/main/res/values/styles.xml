@@ -41,4 +41,31 @@
         <item name="android:textColor">#c7c7cd</item>
         <item name="android:textSize">@dimen/textsize_32px</item>
     </style>
+
+
+    <!--actionbar 标题风格-->
+    <style name="mbackBtnStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">60dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:drawableLeft">@drawable/btn_back_left</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@drawable/btn_back_color</item>
+        <item name="android:textSize">@dimen/textsize_32px</item>
+    </style>
+
+
+    <!--标题栏文字显示风格-->
+    <style name="mActionbarTitleStyle">
+        <item name="android:id">@id/actionbar_title</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">@dimen/textsize_40px</item>
+    </style>
 </resources>

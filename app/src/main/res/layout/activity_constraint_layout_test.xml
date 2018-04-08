@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg_color"
+    android:baselineAligned="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/common_theme_color"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <Button
+            android:id="@+id/back_btn"
+            style="@style/mbackBtnStyle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="返回"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/mActionbarTitleStyle"
+            android:text="布局测试"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tab1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--测试所用组件-->
+            <TextView
+                android:id="@+id/left_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView1"
+                android:textColor="@color/color_black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/right_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView2"
+                android:textColor="@color/common_theme_color"
+                app:layout_constraintBottom_toBottomOf="@+id/left_tv"
+                app:layout_constraintLeft_toRightOf="@+id/left_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_goneMarginRight="@dimen/view_distance_32"/>
+
+            <!--设置 banner 的长宽高约束-->
+            <TextView
+                android:id="@+id/banner1"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/view_distance_32"
+                android:layout_marginLeft="@dimen/view_distance_32"
+                android:layout_marginRight="@dimen/view_distance_32"
+                android:layout_marginStart="@dimen/view_distance_32"
+                android:layout_marginTop="10dp"
+                android:background="#e6d880"
+                android:gravity="center"
+                android:text="banner1"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/banner2"
+                app:layout_constraintTop_toBottomOf="@+id/left_tv"/>
+
+            <!--设置 banner 的长宽高约束-->
+            <TextView
+                android:id="@+id/banner2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/view_distance_32"
+                android:layout_marginStart="@dimen/view_distance_32"
+                android:background="#93f2b0"
+                android:gravity="center"
+                android:text="banner2"
+                android:visibility="visible"
+                app:layout_constraintDimensionRatio="H,3:2"
+                app:layout_constraintLeft_toRightOf="@id/banner1"
+                app:layout_constraintTop_toBottomOf="@+id/left_tv"/>
+
+            <!--设置 banner 的长宽高约束-->
+            <TextView
+                android:id="@+id/banner3"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="@dimen/view_distance_32"
+                android:layout_marginLeft="@dimen/view_distance_32"
+                android:layout_marginRight="@dimen/view_distance_32"
+                android:layout_marginStart="@dimen/view_distance_32"
+                android:layout_marginTop="10dp"
+                android:background="#e68380"
+                android:gravity="center"
+                android:text="banner3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banner2"/>
+
+            <!--设置 banner 的长宽高约束-->
+            <TextView
+                android:id="@+id/banner4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/view_distance_32"
+                android:layout_marginLeft="@dimen/view_distance_32"
+                android:layout_marginRight="@dimen/view_distance_32"
+                android:layout_marginStart="@dimen/view_distance_32"
+                android:layout_marginTop="10dp"
+                android:background="#a7f5ef"
+                android:gravity="center"
+                android:text="banner4"
+                android:visibility="visible"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banner3"/>
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tab1"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#e68380"
+        android:gravity="center"
+        android:text="tab1"
+        android:textColor="@color/color_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tab2"/>
+
+    <TextView
+        android:id="@+id/tab2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#bcf2a6"
+        android:gravity="center"
+        android:text="tab2"
+        android:textColor="@color/color_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/tab1"
+        app:layout_constraintRight_toLeftOf="@+id/tab3"/>
+
+    <TextView
+        android:id="@+id/tab3"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#96bfee"
+        android:gravity="center"
+        android:text="tab3"
+        android:textColor="@color/color_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/tab2"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!--悬浮点-->
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#ff9900"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"/>
+
+</android.support.constraint.ConstraintLayout>
